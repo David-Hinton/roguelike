@@ -1,8 +1,8 @@
 use rltk::{Rltk, VirtualKeyCode};
 use specs::prelude::*;
-use crate::xy_idx;
 
-use super::{Position, Player, State, TileType};
+
+use super::{Position, Player, State, TileType, xy_idx};
 use std::cmp::{min, max};
 
 pub fn try_move_player(delta_x: i32, delta_y: i32, ecs: &mut World) {
