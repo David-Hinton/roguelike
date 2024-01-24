@@ -3,13 +3,15 @@ use rltk::{GameState, Rltk, RGB};
 use specs::prelude::*;
 
 mod components;
-pub use components::*;
+use components::*;
 
 mod map;
-pub use map::*;
+use map::*;
 
 mod player;
 use player::*;
+
+pub mod rect;
 
 
 struct State {
@@ -74,7 +76,7 @@ fn main() -> rltk::BError {
     gs.ecs.register::<Renderable>();
     gs.ecs.register::<Player>();
 
-    gs.ecs.insert(new_map());
+    gs.ecs.insert(new_map_rooms_and_corridors());
 
     gs.ecs
         .create_entity()
